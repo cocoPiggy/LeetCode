@@ -1,4 +1,4 @@
-'''java
+```java
 class Solution {
     public int reverse(int x) {
         int res =0;
@@ -13,4 +13,4 @@ class Solution {
         return res;
     }
 }
-'''
+```
