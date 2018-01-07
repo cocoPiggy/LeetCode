@@ -1,7 +1,7 @@
 LeetCode
 ========
 
-LeetCode solutions in C++ 11 and Python3.
+LeetCode solutions in Java.
 
 |NO.|Title|Solution|Note|Difficulty|Tag|
 |---|-----|--------|----|----------|---|
