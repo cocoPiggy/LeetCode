@@ -1,0 +1,17 @@
+/.metadata/
+*.class
+*.fdt
+*.fnm
+*.fdx
+*.frq
+*.DS_Store
+*.classpath
+*.project
+*/.settings/*
+*.nrm
+*.prx
+*.tii
+*.tis
+*.gen
+.recommenders/index/*
+/.recommenders/
