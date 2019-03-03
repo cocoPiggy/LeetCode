@@ -33,6 +33,7 @@
  */
 
 public class LinkedListCycle {
+	// time 0(n) space (1)
 	public boolean hasCycle(ListNode head) {
 		ListNode walker = head;
 		ListNode runner = head;

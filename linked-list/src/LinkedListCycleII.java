@@ -38,7 +38,7 @@ public class LinkedListCycleII {
 	public ListNode detectCycle(ListNode head) {
 		ListNode slow = head;
 		ListNode fast = head;
-		boolean isCycled;
+		boolean isCycled = false;
 		while (fast != null && slow != null) {
 			slow=slow.next;
 			fast=fast.next.next;
@@ -46,9 +46,9 @@ public class LinkedListCycleII {
 				isCycled=true;
 				break;
 			}
-			if(!isCycled) return null;
+			
 		}
-		
+		if(!isCycled) return null;
 		return head;
 	}
 }

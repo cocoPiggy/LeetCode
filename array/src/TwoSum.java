@@ -16,7 +16,6 @@ import java.util.Map;
 public class TwoSum {
 	//HashMap
 	public int[] twoSum(int[] nums, int target) {
-		int[] res=new int[2];
 		Map<Integer,Integer> map= new HashMap<>();
 		for(int i=0;i<nums.length;i++) {
 			if(map.containsKey(target-nums[i])) {
@@ -25,8 +24,7 @@ public class TwoSum {
 				map.put(nums[i], i);
 			}
 		}
-		
-		return res;
+		return new int[2];
 	}
 
 	public static void main(String[] args) {
@@ -36,5 +34,4 @@ public class TwoSum {
 		int[] res=test.twoSum(nums, target);
 		System.out.println(res[0]+" "+res[1]);
 	}
-
 }

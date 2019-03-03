@@ -45,5 +45,4 @@ public class BestTimetoBuyandSellStockII {
 			BestTimetoBuyandSellStockII test = new BestTimetoBuyandSellStockII();
 			System.out.println(test.maxProfit(nums));
 		}
-	   
 }

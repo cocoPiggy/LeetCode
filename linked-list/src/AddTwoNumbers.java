@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.Set;
+
 // 2. Add Two Numbers
 // Medium
 // Linked List, Math
@@ -17,25 +20,22 @@
  */
 public class AddTwoNumbers {
 	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-		ListNode res = new ListNode(0);
-		ListNode temp = res;
-		int val = 0;
-		while (l1 != null || l2 != null) {
-			val = val / 10;
-			if (l1 != null) {
-				val += l1.val;
+		ListNode dummy = new ListNode(0);
+		ListNode head = dummy;
+		int addOne = 0;
+		while (l1 != null || l2 != null || addOne != 0) {
+			int val1 = l1 == null ? 0 : l1.val;
+			int val2 = l2 == null ? 0 : l2.val;
+			int sum = val1 + val2 + addOne;
+			head.next = new ListNode(sum % 10);
+			addOne = sum / 10;
+			head = head.next;
+			if (l1 != null)
 				l1 = l1.next;
-			}
-			if (l2 != null) {
-				val += l2.val;
+			if (l2 != null)
 				l2 = l2.next;
-			}
-			temp.next = new ListNode(val % 10);
-			temp = temp.next;
 		}
-		if (val / 10 != 0)
-			temp.next = new ListNode(1);
-		return res.next;
+		return dummy.next;
 	}
 
 	public static void main(String[] args) {

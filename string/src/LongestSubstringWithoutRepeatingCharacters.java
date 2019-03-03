@@ -19,9 +19,30 @@
 // Output: 3
 // Explanation: The answer is "wke", with the length of 3. 
 //             Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
+// Time O(n) Space O(n)
+import java.util.*;
 
 public class LongestSubstringWithoutRepeatingCharacters {
 	public int lengthOfLongestSubstring(String s) {
-		return 0;
+		if (s == null || s.length() == 0)
+			return 0;
+		int left = 0;
+		int result = 0;
+		Set<Character> set = new HashSet<>();
+		for (int right = 0; right < s.length(); right++) {
+			char b = s.charAt(right);
+			while (set.contains(b)) {
+				set.remove(s.charAt(left++));
+			}
+			set.add(b);
+			result = Math.max(result, right - left + 1);
+		}
+		return result;
+	}
+
+	public static void main(String[] args) {
+		String input = "abcabcbb";
+		int result = new LongestSubstringWithoutRepeatingCharacters().lengthOfLongestSubstring(input);
+		System.out.println(result);
 	}
 }

@@ -1,3 +1,4 @@
+
 // 20. Valid Parentheses
 // Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 
@@ -25,16 +26,34 @@
 // Example 4:
 
 // Input: "([)]"
-// Output: false
+// Output: falseRre
 
 // Example 5:
 
 // Input: "{[]}"
 // Output: true
+import java.util.*;
 
 public class ValidParentheses {
 	public boolean isValid(String s) {
-		return false;
+		Deque<Character> dq = new ArrayDeque<>();
+		Map<Character, Character> map = new HashMap<>();
+		map.put(')', '(');
+		map.put(']', '[');
+		map.put('}', '{');
+		for (char c : s.toCharArray()) {
+			if (map.containsKey(c)) {
+				if (dq.size() == 0 || map.get(c) != dq.pop())
+					return false;
+			} else {
+				dq.push(c);
+			}
+		}
+		return dq.size() == 0;
+	}
 
+	public static void main(String[] args) {
+		boolean result = new ValidParentheses().isValid(")");
+		System.out.println(result);
 	}
 }
