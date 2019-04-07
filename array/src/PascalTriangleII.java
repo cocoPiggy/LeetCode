@@ -15,7 +15,9 @@
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class PascalTriangleII {
 	// List
@@ -40,6 +42,7 @@ public class PascalTriangleII {
 				res[j]=res[j]+res[j-1];
 			}
 		}
+		
 		return Arrays.asList(res);
 	}
 	

@@ -49,6 +49,11 @@ public class LinkedListCycleII {
 			
 		}
 		if(!isCycled) return null;
-		return head;
+		fast=head;
+		while(fast!=slow) {
+			slow=slow.next;
+			fast=fast.next;
+		}
+		return slow;
 	}
 }

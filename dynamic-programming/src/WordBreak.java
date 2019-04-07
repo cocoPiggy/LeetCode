@@ -58,10 +58,13 @@ public class WordBreak {
 	}
 
 	public static void main(String[] args) {
-		String s = "leetcode";
+		String s = "catsandog";
 		List<String> wordDict = new ArrayList<>();
-		wordDict.add("leet");
-		wordDict.add("code");
+		wordDict.add("cats");
+		wordDict.add("dog");
+		wordDict.add("sand");
+		wordDict.add("and");
+		wordDict.add("cat");
 		WordBreak test = new WordBreak();
 		System.out.println(test.wordBreak(s, wordDict));
 	}

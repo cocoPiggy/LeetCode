@@ -53,7 +53,22 @@ public class WordPattern {
 		return true;
 	}
 	
+	   public boolean wordPattern2(String pattern, String str) {
+		     String[] words = str.split("\\s+");
+		    if(pattern.length()!=words.length) return false;
+		        Map<String, Integer> patternMap=new HashMap<>();
+		        Map<String, Integer> wordMap=new HashMap<>();
+		        for(Integer i=0; i<words.length;i++){
+		            if(patternMap.put(pattern.charAt(i)+"",i)!=wordMap.put(words[i],i))
+		            return false;
+		        }
+		        return true;
+		    }
+	
 	public static void main(String[] args) {
-		System.out.println(new WordPattern().wordPattern("abba","dog cat cat dog"));
+	//	System.out.println(new WordPattern().wordPattern2("abba","dog cat cat dog"));
+		System.out.println(new WordPattern().wordPattern2("ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccdd",
+				"s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s s t t"
+));
 	}
 }

@@ -52,9 +52,7 @@ public class LongestConsecutiveSequence {
 				map.put(num, sum);
 				map.put(num - left, sum);
 				map.put(num + right, sum);
-			} else {
-				continue;
-			}
+			} 
 		}
 		return res;
 	}

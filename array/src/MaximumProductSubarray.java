@@ -35,15 +35,21 @@ public class MaximumProductSubarray {
 	    int res = nums[0];
 	    
 	    for (int i = 1; i < nums.length; i++) {
-	        max = Math.max(Math.max(max * nums[i], min * nums[i]), nums[i]);
-	        min = Math.min(Math.min(max * nums[i], min * nums[i]), nums[i]);
-	        res = Math.max(max, res);
+	    	 if(nums[i]<0){
+	                int temp =max;
+	                max=min;
+	                min=temp;
+	            }
+		        max = Math.max(max * nums[i], nums[i]);
+		        min = Math.min(min * nums[i], nums[i]);
+		        res = Math.max(max, res);
 	    }
 	    return res;
 	}
 	
 	public static void main(String[] args) {
-		int[] nums = { 2,3,-2,4};
-		System.out.println(new MaximumProductSubarray().maxProduct(nums));
+		int[] nums = { -4,-3,-2};
+		int[] nums1= {-1,-2,-9,-6};
+		System.out.println(new MaximumProductSubarray().maxProduct(nums1));
 	}
 }

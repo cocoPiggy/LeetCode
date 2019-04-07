@@ -1,0 +1,5 @@
+properties:
+  applicationName: ORM-CORE-APP
+  master: local[4]
+hbaseOptions:
+  hbase.cluster.distribution: true
