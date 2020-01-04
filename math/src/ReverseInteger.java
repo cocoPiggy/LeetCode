@@ -26,6 +26,7 @@ import java.util.Map;
  */
 
 public class ReverseInteger {
+	// time O(n) Space O(1)
 	public int reverse(int x) {
 		int res = 0;
 		while (x != 0) {

@@ -23,12 +23,14 @@
 import java.util.*;
 
 public class LongestSubstringWithoutRepeatingCharacters {
+	//hashSet Time O(n) Space O(n)
 	public int lengthOfLongestSubstring(String s) {
 		if (s == null || s.length() == 0)
 			return 0;
 		int left = 0;
 		int result = 0;
 		Set<Character> set = new HashSet<>();
+
 		for (int right = 0; right < s.length(); right++) {
 			char b = s.charAt(right);
 			while (set.contains(b)) {
@@ -38,6 +40,22 @@ public class LongestSubstringWithoutRepeatingCharacters {
 			result = Math.max(result, right - left + 1);
 		}
 		return result;
+	}
+	//hashMap Time O(n) Space O(n)
+	public int lengthOfLongestSubstring2(String s) {
+		if(s==null||s.length()==0){
+			return 0;
+		}
+		int res=0;
+		Map<Character,Integer> map = new HashMap<>();
+		for(int i=0,j=0;i<s.length();i++){
+			if(map.containsKey(s.charAt(i))){
+				j=Math.max(j,map.get(s.charAt(i))+1);
+			}
+			map.put(s.charAt(i),i);
+			res=Math.max(res,i-j+1);
+		}
+		return res;
 	}
 
 	public static void main(String[] args) {

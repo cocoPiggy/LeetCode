@@ -17,7 +17,7 @@
 
 public class MergeTwoSortedLists {
 	
-	// iterative
+	// iterative  Time O(n) Space O(1)
 	public ListNode mergeTwoLists1(ListNode l1, ListNode l2) {
 		ListNode res = new ListNode(0);
 		ListNode temp = res;
@@ -38,7 +38,7 @@ public class MergeTwoSortedLists {
 		return res.next;
 	}
 
-	// recursive
+	// recursive Time O(n) Space O(n)
 	public ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
 		if (l1 == null)
 			return l2;

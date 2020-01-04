@@ -77,6 +77,7 @@
  *
  */
 public class RomantoInteger {
+	// time O(n) space O(1)
 	public int romanToInt(String s) {
 		if (s == null || s.length() == 0)
 			return 0;

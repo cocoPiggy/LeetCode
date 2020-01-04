@@ -35,6 +35,7 @@
 import java.util.*;
 
 public class ValidParentheses {
+	// Time O(n) space O(n)
 	public boolean isValid(String s) {
 		Deque<Character> dq = new ArrayDeque<>();
 		Map<Character, Character> map = new HashMap<>();

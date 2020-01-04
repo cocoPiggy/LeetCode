@@ -51,6 +51,7 @@ public class MedianofTwoSortedArrays {
 		return findKth(nums1, left1, nums2, left2 + k / 2, k - k / 2);
 	}
 
+	//O(log(min(m,n)))
 	public double findMedianSortedArrays2(int[] nums1, int[] nums2) {
 		if (nums1.length > nums2.length) {
 			return findMedianSortedArrays2(nums2, nums1);
@@ -85,10 +86,42 @@ public class MedianofTwoSortedArrays {
 		return -1;
 	}
 
+	public double findMedianSortedArrays3(int[] nums1, int[] nums2) {
+		if(nums1.length>nums2.length){
+			findMedianSortedArrays(nums2,nums1);
+		}
+		int n1=nums1.length;
+		int n2=nums2.length;
+		int start=0;
+		int end=n1;
+		int cut1=0;
+		int cut2=0;
+		while(start<=end){
+			cut1=(start+end)/2;
+			cut2=(n1+n2)/2-cut1;
+			int left1=cut1==0?Integer.MIN_VALUE:nums1[cut1-1];
+			int left2=cut2==0?Integer.MIN_VALUE:nums2[cut2-1];
+			int right1=cut1==n1?Integer.MAX_VALUE:nums1[cut1];
+			int right2=cut2==n2?Integer.MAX_VALUE:nums2[cut2];
+			if(left1>right2){
+				end=cut1-1;
+			} else if (left2>right1) {
+				start=cut1+1;
+			} else {
+				if((n1+n2)%2==0){
+					return (double) (Math.min(right1,right2)+Math.max(left1,left2))/2;
+				} else{
+					return (double) Math.min(right1,right2);
+				}
+			}
+		}
+		return -1;
+
+	}
 	public static void main(String[] args) {
 		int[] nums1 = { 2,3,4,5};
 		int[] nums2 = { 1 };
-		double result = new MedianofTwoSortedArrays().findMedianSortedArrays2(nums1, nums2);
+		double result = new MedianofTwoSortedArrays().findMedianSortedArrays3(nums1, nums2);
 		System.out.println(result);
 	}
 }

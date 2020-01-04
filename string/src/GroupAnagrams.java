@@ -30,6 +30,7 @@ import java.util.List;
 import java.util.Map;
 
 public class GroupAnagrams {
+	//time O(m*n) space O(n)
 	public List<List<String>> groupAnagrams(String[] strs) {
 		if (strs == null || strs.length == 0)
 			return new ArrayList<List<String>>();
@@ -40,7 +41,6 @@ public class GroupAnagrams {
 			String s = new String(ch);
 			if (map.containsKey(s)) {
 				map.get(s).add(str);
-
 			} else {
 				List<String> list = new ArrayList<>();
 				list.add(str);
