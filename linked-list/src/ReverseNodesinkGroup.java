@@ -20,6 +20,7 @@
  * You may not alter the values in the list's nodes, only nodes itself may be changed.
  */
 public class ReverseNodesinkGroup {
+    //  time O(n) space O(n)
     public ListNode reverseKGroup(ListNode head, int k) {
         if(head==null||head.next==null) return head;
         int count =0;
